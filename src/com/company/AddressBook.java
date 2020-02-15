@@ -18,12 +18,44 @@ public class AddressBook {
     }
 
     /**
-     * Adds an AddressEntry to the list in alphabetical order
+     * Adds specified AddressEntry to the list then sorts the list to maintain alphabetical order.
      * @param entry An AddressEntry to be added to the LinkedList
      */
     public void add(AddressEntry entry) {
         contacts.add(entry);
         contacts.sort(new ContactComparator());
+    }
+
+    /**
+     * Searches for and removes the AddressEntry with the specified lastName. If more than one AddressEntry
+     * with the same lastName exists, display all AddressEntry's with that lastName and allow user to choose
+     * which AddressEntry to remove
+     * @param lastName
+     */
+    public void remove(String lastName) {
+
+    }
+
+    /**
+     * Finds all AddressEntry's with the specified prefix in their lastName.
+     * @param lastNamePrefix Any string, including the empty string
+     * @return A list of all AddressEntry's with the specified lastNamePrefix. If user inputs the empty string
+     * a list of all AddressEntry's will be returned.
+     */
+    public ArrayList<AddressEntry> find(String lastNamePrefix) {
+        ArrayList<AddressEntry> result;
+        if(lastNamePrefix.equals("")) {
+            return this.contacts;
+        } else {
+            result = new ArrayList<AddressEntry>();
+            for(int i = 0; i < contacts.size(); i++) {
+                // Checks if the current AddressEntry's lastName starts with lastNamePrefix
+                if(contacts.get(i).lastName.startsWith(lastNamePrefix)) {
+                    result.add(contacts.get(i));
+                }
+            }
+            return result;
+        }
     }
 
     /**
@@ -41,13 +73,17 @@ public class AddressBook {
      * @param filename Specially formatted text file
      * @throws FileNotFoundException
      */
-    public void init(String filename) throws FileNotFoundException {
+    public void loadFromFile(String filename) throws FileNotFoundException {
         try {
-            File in = new File(filename);
+            File in = new File(filename);               //
             BufferedReader inputBuffer = new BufferedReader(new FileReader(in));
             String line;                                // Temporary string to hold data from current line
             int lineNum = 0;                            // Keeps count of lines to help with parsing input file
             AddressEntry entry = new AddressEntry();    // Temporary AddressEntry to hold values
+
+            /* Goes through the specially formatted file line by line, creates new AddressEntry's and adds
+             * them to the AddressBook
+             */
             while((line = inputBuffer.readLine()) != null) {
                 if(lineNum % 8 == 0) {
                     entry.firstName = line;
