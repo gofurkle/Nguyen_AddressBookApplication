@@ -7,7 +7,7 @@ import java.util.*;
  * @author Jamie Nguyen
  */
 public class AddressBook {
-    ArrayList<AddressEntry> contacts;
+    private ArrayList<AddressEntry> contacts;
 
     /**
      * Default constructor
@@ -27,27 +27,23 @@ public class AddressBook {
     }
 
     /**
-     * Searches for and removes the AddressEntry with the specified lastName. If more than one AddressEntry
-     * with the same lastName exists, display all AddressEntry's with that lastName and allow user to choose
-     * which AddressEntry to remove
-     * @param lastName
+     * Removes the specified AddressEntry
+     * @param entry
      */
-    public void remove(String lastName) {
-
+    public void remove(AddressEntry entry) {
+        this.remove(entry);
     }
 
     /**
      * Finds all AddressEntry's with the specified prefix in their lastName.
      * @param lastNamePrefix Any string, including the empty string
-     * @return A list of all AddressEntry's with the specified lastNamePrefix. If user inputs the empty string
-     * a list of all AddressEntry's will be returned.
+     * @return A list of all AddressEntry's with the specified lastNamePrefix. If user inputs the empty string a list of all AddressEntry's will be returned.
      */
     public ArrayList<AddressEntry> find(String lastNamePrefix) {
-        ArrayList<AddressEntry> result;
         if(lastNamePrefix.equals("")) {
             return this.contacts;
         } else {
-            result = new ArrayList<AddressEntry>();
+            ArrayList<AddressEntry> result = new ArrayList<AddressEntry>();
             for(int i = 0; i < contacts.size(); i++) {
                 // Checks if the current AddressEntry's lastName starts with lastNamePrefix
                 if(contacts.get(i).lastName.startsWith(lastNamePrefix)) {
@@ -59,7 +55,7 @@ public class AddressBook {
     }
 
     /**
-     * Goes through the list of AddressEntry's using an iterator and displays the elements of each AddressEntry
+     * Goes through the list of AddressEntry's using an iterator and displays the contents of each AddressEntry
      */
     public void list() {
         Iterator it = contacts.iterator();

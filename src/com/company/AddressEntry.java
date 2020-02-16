@@ -32,7 +32,7 @@ public class AddressEntry {
     /**
      * Stores the zip code of the person of this AddressEntry
      */
-    Integer zip;
+    int zip;
 
     /**
      * Stores the telephone number of the person of this AddressEntry
@@ -70,7 +70,7 @@ public class AddressEntry {
      * @param tele telephone number
      * @param email email address
      */
-    AddressEntry(String first, String last, String street, String city, String state, Integer zip, String tele, String email) {
+    AddressEntry(String first, String last, String street, String city, String state, int zip, String tele, String email) {
         this.firstName = first;
         this.lastName = last;
         this.street = street;
@@ -173,7 +173,7 @@ public class AddressEntry {
      * Returns this AddressEntry's zip
      * @return zip
      */
-    public Integer getZip() {
+    public int getZip() {
         return this.zip;
     }
 
@@ -215,8 +215,8 @@ public class AddressEntry {
      */
     public String toString() {
         String entry = String.format
-                ("First Name: %s\nLast Name: %s\nStreet: %s\nCity: %s\nState: %s\nZip: %s\nPhone: %s\nEmail: %s\n",
-                        firstName, lastName, street, city, state, zip.toString(), telephone, email);
+                ("First Name: %s\nLast Name: %s\nStreet: %s\nCity: %s\nState: %s\nZip: %d\nPhone: %s\nEmail: %s\n",
+                        firstName, lastName, street, city, state, zip, telephone, email);
         return entry;
     }
 }
