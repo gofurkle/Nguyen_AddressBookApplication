@@ -13,8 +13,14 @@ public class Menu {
      */
     static String prompt_FirstName() {
         Scanner input = new Scanner(System.in);
-        System.out.println("First Name: ");
-        String firstName = input.nextLine();
+        String firstName;
+        do {
+            System.out.println("State: ");
+            firstName = input.nextLine();
+            if(!firstName.matches("[a-zA-Z]+|^$")) {
+                System.out.println("Invalid input. Please enter a valid state.");
+            }
+        } while(!firstName.matches("[a-zA-Z]+|^$"));
         return firstName;
     }
 
@@ -24,8 +30,14 @@ public class Menu {
      */
     static String prompt_LastName() {
         Scanner input = new Scanner(System.in);
-        System.out.println("Last Name: ");
-        String lastName = input.nextLine();
+        String lastName;
+        do {
+            System.out.println("State: ");
+            lastName = input.nextLine();
+            if(!lastName.matches("[a-zA-Z]+|^$")) {
+                System.out.println("Invalid input. Please enter a valid state.");
+            }
+        } while(!lastName.matches("[a-zA-Z]+|^$"));
         return lastName;
     }
 
@@ -35,8 +47,14 @@ public class Menu {
      */
     static String prompt_Street() {
         Scanner input = new Scanner(System.in);
-        System.out.println("Street: ");
-        String street = input.nextLine();
+        String street;
+        do {
+            System.out.println("State: ");
+            street = input.nextLine();
+            if(!street.matches("[a-zA-Z]+|^$")) {
+                System.out.println("Invalid input. Please enter a valid state.");
+            }
+        } while(!street.matches("[a-zA-Z]+|^$"));
         return street;
     }
 
@@ -46,8 +64,14 @@ public class Menu {
      */
     static String prompt_City() {
         Scanner input = new Scanner(System.in);
-        System.out.println("City: ");
-        String city = input.nextLine();
+        String city;
+        do {
+            System.out.println("State: ");
+            city = input.nextLine();
+            if(!city.matches("[a-zA-Z]+|^$")) {
+                System.out.println("Invalid input. Please enter a valid state.");
+            }
+        } while(!city.matches("[a-zA-Z]+|^$"));
         return city;
     }
 
@@ -57,8 +81,14 @@ public class Menu {
      */
     static String prompt_State() {
         Scanner input = new Scanner(System.in);
-        System.out.println("State: ");
-        String state = input.nextLine();
+        String state;
+        do {
+            System.out.println("State: ");
+            state = input.nextLine();
+            if(!state.matches("[a-zA-Z]+|^$")) {
+                System.out.println("Invalid input. Please enter a valid state.");
+            }
+        } while(!state.matches("[a-zA-Z]+|^$"));
         return state;
     }
 
@@ -68,8 +98,14 @@ public class Menu {
      */
     static String prompt_Zip() {
         Scanner input = new Scanner(System.in);
-        System.out.println("Zip Code: ");
-        String zip = input.nextLine();
+        String zip;
+        do {
+            System.out.println("Zip Code: ");
+            zip = input.nextLine();
+            if(!zip.matches("\\d\\d\\d\\d\\d|^$")) {
+                System.out.println("Invalid zip code. Please enter a valid zip code.");
+            }
+        } while(!zip.matches("\\d\\d\\d\\d\\d|^$"));
         return zip;
     }
 
@@ -79,8 +115,14 @@ public class Menu {
      */
     static String prompt_Telephone() {
         Scanner input = new Scanner(System.in);
-        System.out.println("Telephone Number: ");
-        String phoneNum = input.nextLine();
+        String phoneNum;
+        do {
+            System.out.println("Phone Number: xxx-aaa-bbb");
+            phoneNum = input.nextLine();
+            if(!phoneNum.matches("\\d\\d\\d-\\d\\d\\d-\\d\\d\\d\\d|^$")) {
+                System.out.println("Invalid phone number. Please follow the format specified for entering a phone number");
+            }
+        } while(!phoneNum.matches("\\d\\d\\d-\\d\\d\\d-\\d\\d\\d\\d|^$"));
         return phoneNum;
     }
 
@@ -90,8 +132,13 @@ public class Menu {
      */
     static String prompt_Email() {
         Scanner input = new Scanner(System.in);
-        System.out.println("Email: ");
-        String email = input.nextLine();
+        String email;
+
+        // Checks user input for a valid email or empty string if the user leaves line blank
+        do {
+            System.out.println("Email: ");
+            email = input.nextLine();
+        } while(!email.matches("\\w+@[a-zA-Z].com|^$"));
         return email;
     }
 }

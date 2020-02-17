@@ -1,6 +1,7 @@
 package com.company;
 
 import java.io.*;
+import java.nio.file.*;
 import java.util.*;
 
 /**
@@ -31,7 +32,7 @@ public class AddressBook {
      * @param entry
      */
     public void remove(AddressEntry entry) {
-        this.remove(entry);
+        contacts.remove(entry);
     }
 
     /**
@@ -71,7 +72,7 @@ public class AddressBook {
      */
     public void loadFromFile(String filename) throws FileNotFoundException {
         try {
-            File in = new File(filename);               //
+            File in = new File("src/com/company/" + filename);            //
             BufferedReader inputBuffer = new BufferedReader(new FileReader(in));
             String line;                                // Temporary string to hold data from current line
             int lineNum = 0;                            // Keeps count of lines to help with parsing input file

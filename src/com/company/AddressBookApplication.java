@@ -13,6 +13,8 @@ public class AddressBookApplication {
         boolean menu = true;
         String task = "";
         while(menu) {
+            // Prints to console menu options for the user to choose
+            System.out.println("Please enter in your menu selection");
             System.out.println("a) Load from File\n" +
                                "b) Add new entry\n"  +
                                "c) Remove entry\n"   +
@@ -45,21 +47,30 @@ public class AddressBookApplication {
                     ab.add(newEntry);
                     break;
                 case "c":   // Remove an entry
+                    // Get user input for prefix of last name to remove
                     System.out.println("Enter the last name of the contact you want to remove: ");
                     prefix = scanPrefix.nextLine();
+
+                    // Gets list of contacts with specified prefix in their last name and prints to console
                     entriesFound = ab.find(prefix);
-                    System.out.printf("The following %d entries were found in the AddressBook that match your search criteria. Select the" +
-                            "number for the entry you wish to remove:", entriesFound.size());
-                    for(int i = 0; i < entriesFound.size(); i++) {
-                        System.out.println(entriesFound.get(i));
+                    if(entriesFound.size() > 0) {
+                        System.out.printf("The following %d entries were found in the AddressBook that match your search criteria. Select the" +
+                                " number for the entry you wish to remove:\n", entriesFound.size());
+                        for(int i = 0; i < entriesFound.size(); i++) {
+                            System.out.printf("%d. %s", i+1, entriesFound.get(i));
+                        }
+                    } else {
+                        break;
                     }
 
+                    // Get user input for which contact with specified prefix in their last name to remove
                     Scanner scanSelection = new Scanner(System.in);
                     Scanner scanConfirm = new Scanner(System.in);
                     String selection = scanSelection.nextLine();
-                    int selectionIndex = Integer.parseInt(selection);
-
+                    int selectionIndex = Integer.parseInt(selection)-1;
                     String confirmation;
+
+                    // Request user input until valid input, either 'y' or 'n'
                     do {
                         System.out.println("Hit 'y' to remove the following entry or 'n' to return to the main menu:");
                         System.out.print(entriesFound.get(selectionIndex));
@@ -72,13 +83,16 @@ public class AddressBookApplication {
                     ab.remove(entriesFound.get(selectionIndex));
                     break;
                 case "d":   // Find an entry(s)
+                    // Get user input for prefix of last name
                     System.out.println("Enter in all or the beginning of the last name of the contact you wish to find: ");
                     prefix = scanPrefix.nextLine();
+
+                    // Gets list of contacts with specified prefix in their last name and prints to console
                     entriesFound = ab.find(prefix);
                     System.out.printf("The following %d entries were found in the AddressBook for a last name starting with '%s':\n",
                             entriesFound.size(), prefix);
                     for(int i = 0; i < entriesFound.size(); i++) {
-                        System.out.println(entriesFound.get(i));
+                        System.out.printf("%d. %s", i+1, entriesFound.get(i));
                     }
                     break;
                 case "e":   // List all entry(s)
@@ -86,6 +100,7 @@ public class AddressBookApplication {
                     break;
                 case "f":
                     menu = false;
+                    System.out.print("Goodbye!");
                     System.exit(0);
             }
         }
