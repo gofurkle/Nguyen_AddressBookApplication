@@ -53,9 +53,23 @@ public class AddressBookApplication {
                     for(int i = 0; i < entriesFound.size(); i++) {
                         System.out.println(entriesFound.get(i));
                     }
+
                     Scanner scanSelection = new Scanner(System.in);
+                    Scanner scanConfirm = new Scanner(System.in);
                     String selection = scanSelection.nextLine();
-                    ab.remove(entriesFound.get(Integer.parseInt(selection)));
+                    int selectionIndex = Integer.parseInt(selection);
+
+                    String confirmation;
+                    do {
+                        System.out.println("Hit 'y' to remove the following entry or 'n' to return to the main menu:");
+                        System.out.print(entriesFound.get(selectionIndex));
+                        confirmation = scanConfirm.nextLine();
+                        if(!confirmation.equals("y") && !confirmation.equals("n")) {
+                            System.out.println("Invalid entry!");
+                        }
+                    } while(!confirmation.equals("y") && !confirmation.equals("n"));
+
+                    ab.remove(entriesFound.get(selectionIndex));
                     break;
                 case "d":   // Find an entry(s)
                     System.out.println("Enter in all or the beginning of the last name of the contact you wish to find: ");

@@ -165,7 +165,7 @@ public class AddressEntry {
      * Sets zip to zip
      * @param zip
      */
-    public void setZip(Integer zip) {
+    public void setZip(int zip) {
         this.zip = zip;
     }
 
@@ -215,8 +215,8 @@ public class AddressEntry {
      */
     public String toString() {
         String entry = String.format
-                ("First Name: %s\nLast Name: %s\nStreet: %s\nCity: %s\nState: %s\nZip: %d\nPhone: %s\nEmail: %s\n",
-                        firstName, lastName, street, city, state, zip, telephone, email);
+                ("%s %s\n%s\n%s, %s, %d\n%s\n%s\n",
+                        firstName, lastName, street, city, state, zip, email, telephone);
         return entry;
     }
 }
