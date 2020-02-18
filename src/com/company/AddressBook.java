@@ -8,11 +8,14 @@ import java.util.*;
  * @author Jamie Nguyen
  */
 public class AddressBook {
+    /**
+     * ArrayList to hold all AddressEntry's
+     */
     private ArrayList<AddressEntry> contacts;
 
     /**
      * Default constructor
-     * Initializes a new ArrayList to hold AddressEntry's
+     * Initializes an empty ArrayList to hold AddressEntry's
      */
     AddressBook() {
         contacts = new ArrayList<AddressEntry>();
@@ -20,7 +23,7 @@ public class AddressBook {
 
     /**
      * Adds specified AddressEntry to the list then sorts the list to maintain alphabetical order.
-     * @param entry An AddressEntry to be added to the LinkedList
+     * @param entry Specified AddressEntry to be added to the list of contacts
      */
     public void add(AddressEntry entry) {
         contacts.add(entry);
@@ -29,7 +32,7 @@ public class AddressBook {
 
     /**
      * Removes the specified AddressEntry
-     * @param entry
+     * @param entry Specified AddressEntry to be removed from the list of contacts
      */
     public void remove(AddressEntry entry) {
         contacts.remove(entry);

@@ -45,8 +45,7 @@ public class AddressEntry {
     String email;
 
     /**
-     * Default constructor
-     * Initializes all values to empty string or 0
+     * Default constructor. Sets all fields to blank
      */
     AddressEntry() {
         this.firstName = "";
@@ -82,8 +81,8 @@ public class AddressEntry {
     }
 
     /**
-     * Sets firstName to first
-     * @param first
+     * Sets this AddressEntry's firstName field to the string specified by first
+     * @param first Specified first name string
      */
     public void setFirstName(String first) {
         this.firstName = first;
@@ -91,15 +90,15 @@ public class AddressEntry {
 
     /**
      * Returns this AddressEntry's firstName
-     * @return firstName
+     * @return This AddressEntry's first name field
      */
     public String getFirstName() {
         return this.firstName;
     }
 
     /**
-     * Sets lastName to last
-     * @param last
+     * Sets this AddressEntry's lastName field to the string specified by last
+     * @param last Specified last name string
      */
     public void setLastName(String last) {
         this.lastName = last;
@@ -107,15 +106,15 @@ public class AddressEntry {
 
     /**
      * Returns this AddressEntry's lastName
-     * @return lastName
+     * @return This AddressEntry's last name field
      */
     public String getLastName() {
         return this.lastName;
     }
 
     /**
-     * Sets street to street
-     * @param street
+     * Sets this AddressEntry's street field to the string specified by street
+     * @param street Specified street string
      */
     public void setStreet(String street) {
         this.street = street;
@@ -123,15 +122,15 @@ public class AddressEntry {
 
     /**
      * Returns this AddressEntry's street
-     * @return street
+     * @return This AddressEntry's street field
      */
     public String getStreet() {
         return this.street;
     }
 
     /**
-     * Sets city to city
-     * @param city
+     * Sets this AddressEntry's city field to the string specified by city
+     * @param city Specified city string
      */
     public void setCity(String city) {
         this.city = city;
@@ -139,15 +138,15 @@ public class AddressEntry {
 
     /**
      * Returns this AddressEntry's city
-     * @return city
+     * @return This AddressEntry's city field
      */
     public String getCity() {
         return this.city;
     }
 
     /**
-     * Sets state to state
-     * @param state
+     * Sets this AddressEntry's state field to the string specified by state
+     * @param state Specified state string
      */
     public void setState(String state) {
         this.state = state;
@@ -155,15 +154,15 @@ public class AddressEntry {
 
     /**
      * Returns this AddressEntry's state
-     * @return state
+     * @return This AddressEntry's state field
      */
     public String getState() {
         return this.state;
     }
 
     /**
-     * Sets zip to zip
-     * @param zip
+     * Sets this AddressEntry's lastName zip to the string specified by zip
+     * @param zip Specified zip string
      */
     public void setZip(int zip) {
         this.zip = zip;
@@ -171,15 +170,15 @@ public class AddressEntry {
 
     /**
      * Returns this AddressEntry's zip
-     * @return zip
+     * @return This AddressEntry's zip field
      */
     public int getZip() {
         return this.zip;
     }
 
     /**
-     * Sets telephone to tele
-     * @param tele
+     * Sets this AddressEntry's telephone field to the string specified by tele
+     * @param tele Specified telephone string
      */
     public void setTelephone(String tele) {
         this.telephone = tele;
@@ -194,8 +193,8 @@ public class AddressEntry {
     }
 
     /**
-     * Sets email to email
-     * @param email
+     * Sets this AddressEntry's email field to the string specified by email
+     * @param email Specified email string
      */
     public void setEmail(String email) {
         this.email = email;
@@ -203,7 +202,7 @@ public class AddressEntry {
 
     /**
      * Returns this AddressEntry's email
-     * @return
+     * @return This AddressEntry's email field
      */
     public String getEmail() {
         return this.email;
@@ -211,7 +210,7 @@ public class AddressEntry {
 
     /**
      * Returns a string containing contents of this AddressEntry separated by new lines
-     * @return entry
+     * @return formatted string that displays the contents of this AddressEntry
      */
     public String toString() {
         String entry = String.format

@@ -15,10 +15,10 @@ public class Menu {
         Scanner input = new Scanner(System.in);
         String firstName;
         do {
-            System.out.println("State: ");
+            System.out.println("First Name: ");
             firstName = input.nextLine();
             if(!firstName.matches("[a-zA-Z]+|^$")) {
-                System.out.println("Invalid input. Please enter a valid state.");
+                System.out.println("Invalid input. Please enter a valid name.");
             }
         } while(!firstName.matches("[a-zA-Z]+|^$"));
         return firstName;
@@ -32,10 +32,10 @@ public class Menu {
         Scanner input = new Scanner(System.in);
         String lastName;
         do {
-            System.out.println("State: ");
+            System.out.println("Last Name: ");
             lastName = input.nextLine();
             if(!lastName.matches("[a-zA-Z]+|^$")) {
-                System.out.println("Invalid input. Please enter a valid state.");
+                System.out.println("Invalid input. Please enter a valid name.");
             }
         } while(!lastName.matches("[a-zA-Z]+|^$"));
         return lastName;
@@ -49,12 +49,12 @@ public class Menu {
         Scanner input = new Scanner(System.in);
         String street;
         do {
-            System.out.println("State: ");
+            System.out.println("Street: ");
             street = input.nextLine();
-            if(!street.matches("[a-zA-Z]+|^$")) {
-                System.out.println("Invalid input. Please enter a valid state.");
+            if(!street.matches("[a-zA-Z0-9 ]+|^$")) {
+                System.out.println("Invalid input. Please enter a valid street.");
             }
-        } while(!street.matches("[a-zA-Z]+|^$"));
+        } while(!street.matches("[a-zA-Z0-9 ]+|^$"));
         return street;
     }
 
@@ -66,12 +66,12 @@ public class Menu {
         Scanner input = new Scanner(System.in);
         String city;
         do {
-            System.out.println("State: ");
+            System.out.println("City: ");
             city = input.nextLine();
-            if(!city.matches("[a-zA-Z]+|^$")) {
-                System.out.println("Invalid input. Please enter a valid state.");
+            if(!city.matches("[a-zA-Z ]+|^$")) {
+                System.out.println("Invalid input. Please enter a valid city.");
             }
-        } while(!city.matches("[a-zA-Z]+|^$"));
+        } while(!city.matches("[a-zA-Z ]+|^$"));
         return city;
     }
 
@@ -138,7 +138,7 @@ public class Menu {
         do {
             System.out.println("Email: ");
             email = input.nextLine();
-        } while(!email.matches("\\w+@[a-zA-Z].com|^$"));
+        } while(!email.matches("\\w+@[a-zA-Z.]|^$"));
         return email;
     }
 }
