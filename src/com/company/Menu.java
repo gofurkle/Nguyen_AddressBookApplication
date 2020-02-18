@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 /**
  * @author Jamie Nguyen
+ * Collection of static methods to get input from user and return a string
  */
 public class Menu {
     /**

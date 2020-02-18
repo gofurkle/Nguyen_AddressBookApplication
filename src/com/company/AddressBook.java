@@ -11,7 +11,7 @@ public class AddressBook {
     /**
      * ArrayList to hold all AddressEntry's
      */
-    private ArrayList<AddressEntry> contacts;
+    public ArrayList<AddressEntry> contacts;
 
     /**
      * Default constructor
@@ -64,7 +64,7 @@ public class AddressBook {
     public void list() {
         Iterator it = contacts.iterator();
         while(it.hasNext()) {
-            System.out.println(it.next());
+            System.out.print(it.next()+"\n");
         }
     }
 
@@ -73,7 +73,7 @@ public class AddressBook {
      * @param filename Specially formatted text file
      * @throws FileNotFoundException
      */
-    public void loadFromFile(String filename) throws FileNotFoundException {
+    public void readFromFile(String filename) throws FileNotFoundException {
         try {
             File in = new File("src/com/company/" + filename);            //
             BufferedReader inputBuffer = new BufferedReader(new FileReader(in));

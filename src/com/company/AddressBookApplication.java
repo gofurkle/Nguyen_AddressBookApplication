@@ -32,7 +32,7 @@ public class AddressBookApplication {
                     Scanner scanFileName = new Scanner(System.in);
                     System.out.println("Enter file name: ");
                     String fileName = scanFileName.nextLine();
-                    ab.loadFromFile(fileName);
+                    ab.readFromFile(fileName);
                     break;
                 case "b":   // Add an entry
                     String firstName = Menu.prompt_FirstName();
@@ -57,7 +57,7 @@ public class AddressBookApplication {
                         System.out.printf("The following %d entries were found in the AddressBook that match your search criteria. Select the" +
                                 " number for the entry you wish to remove:\n", entriesFound.size());
                         for(int i = 0; i < entriesFound.size(); i++) {
-                            System.out.printf("%d. %s", i+1, entriesFound.get(i));
+                            System.out.printf("%d)\n%s", i+1, entriesFound.get(i));
                         }
                     } else {
                         break;
@@ -92,7 +92,7 @@ public class AddressBookApplication {
                     System.out.printf("The following %d entries were found in the AddressBook for a last name starting with '%s':\n",
                             entriesFound.size(), prefix);
                     for(int i = 0; i < entriesFound.size(); i++) {
-                        System.out.printf("%d. %s", i+1, entriesFound.get(i));
+                        System.out.printf("%d)\n%s", i+1, entriesFound.get(i));
                     }
                     break;
                 case "e":   // List all entry(s)
