@@ -68,14 +68,15 @@ public class AddressBookTest {
                 "CA", 95132, "408-569-5564", "jamienguyen000@gmail.com");
         ab.add(entry1);
 
-        //
+        // Capture output
         ByteArrayOutputStream output = new ByteArrayOutputStream();
         PrintStream ogOut = System.out;
         System.setOut(new PrintStream(output));
 
 
         ab.list();
-        assertEquals("Jamie Nguyen\n1655 Westhaven Drive\nSan Jose, CA, 95132\njamienguyen000@gmail.com\n408-569-5564\n\n",output.toString());
+        assertEquals("Jamie Nguyen\n1655 Westhaven Drive\nSan Jose, CA, 95132\njamienguyen000@gmail.com\n408-569-5564\n\n",
+                output.toString());
     }
 
     @Test

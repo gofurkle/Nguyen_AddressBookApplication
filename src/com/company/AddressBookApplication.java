@@ -20,7 +20,7 @@ public class AddressBookApplication {
                                "c) Remove entry\n"   +
                                "d) Find entry\n"     +
                                "e) List entry\n"     +
-                               "f) Quit\n");
+                               "f) Quit");
 
             task = scanTask.nextLine();
             ArrayList<AddressEntry> entriesFound;
@@ -40,7 +40,7 @@ public class AddressBookApplication {
                     String street = Menu.prompt_Street();
                     String city = Menu.prompt_City();
                     String state = Menu.prompt_State();
-                    int zip = Integer.parseInt(Menu.prompt_Zip());
+                    int zip = Menu.prompt_Zip();
                     String phoneNumber = Menu.prompt_Telephone();
                     String email = Menu.prompt_Email();
                     AddressEntry newEntry = new AddressEntry(firstName, lastName, street, city, state, zip, phoneNumber, email);

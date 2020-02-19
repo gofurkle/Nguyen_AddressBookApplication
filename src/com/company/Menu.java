@@ -97,7 +97,7 @@ public class Menu {
      * Prompts user to input zip code and returns it
      * @return zip string input from user
      */
-    static String prompt_Zip() {
+    static int prompt_Zip() {
         Scanner input = new Scanner(System.in);
         String zip;
         do {
@@ -107,7 +107,7 @@ public class Menu {
                 System.out.println("Invalid zip code. Please enter a valid zip code.");
             }
         } while(!zip.matches("\\d\\d\\d\\d\\d|^$"));
-        return zip;
+        return Integer.parseInt(zip);
     }
 
     /**
@@ -139,7 +139,10 @@ public class Menu {
         do {
             System.out.println("Email: ");
             email = input.nextLine();
-        } while(!email.matches("\\w+@[a-zA-Z.]|^$"));
+            if(!email.matches("\\w+@[a-zA-Z]+\\.[a-zA-Z]+|^$")) {
+                System.out.println("Invalid email address. Please enter a valid email.");
+            }
+        } while(!email.matches("\\w+@[a-zA-Z]+\\.[a-zA-Z]+|^$"));
         return email;
     }
 }

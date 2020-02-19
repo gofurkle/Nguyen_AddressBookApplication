@@ -70,7 +70,7 @@ class MenuTest {
         in.read(bytes, 0, inLength);
         String expected = new String(bytes, StandardCharsets.UTF_8);
 
-        assertEquals(expected, "95132");
+        assertEquals(Integer.parseInt(expected), 95132);
     }
 
     @Test

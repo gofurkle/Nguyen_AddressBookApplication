@@ -45,7 +45,7 @@ public class AddressEntry {
     String email;
 
     /**
-     * Default constructor. Sets all fields to blank
+     * Default constructor. Sets all fields blank
      */
     AddressEntry() {
         this.firstName = "";
